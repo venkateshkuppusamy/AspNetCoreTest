@@ -33,9 +33,14 @@ Visual Studio 2017
  406 -- Not Acceptable. When the server could not respond with request resource representation. eg Appliation/xml, but api supports only         application/json.
  415 -- Unsupportable media type status. When the content is different type and api doesnt suppor this type.
  409 -- Conflict status. When the update of a resource fails due to race condition.
- 
- 
+  
  500 -- Internal server error. Any logic exception, connectivity issue, memory issue errors are sent back as 500.
+ 
+ How routing is done in this project?
+ What is a statup file?
+ Url naming and right conventions?
+ How API docummentation is done?
+ Response data format, business validation?
  
  
  
