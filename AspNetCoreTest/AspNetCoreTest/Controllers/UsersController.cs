@@ -28,20 +28,21 @@ namespace AspNetCoreTest.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public IActionResult Get()
+        public ActionResult Get()
         {
             return Ok(Users);
         }
 
         // GET: api/Users/5
         [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get(int id)
+        public ActionResult Get(int id)
         {
             var user = Users.FirstOrDefault(f => f.ID == id);
             if (user != null)
                 return Ok(user);
             else
                 return NotFound();
+            
         }
 
         // POST: api/Users
