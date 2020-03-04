@@ -42,13 +42,16 @@ namespace AspNetCoreTest
             {
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"StaticFiles")),
-            });
+            app.UseHttpsRedirection();  // middle ware to make http calls as https
+            app.UseStaticFiles();       // middle ware to access static files
 
-            app.UseMvc();
+            /* middle ware to access static files with custom changes*/
+            /*app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+            });
+            */
+            app.UseMvc();               //middle ware which include mvc based routing.
         }
     }
 }
