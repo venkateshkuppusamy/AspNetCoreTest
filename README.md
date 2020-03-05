@@ -52,6 +52,25 @@ The parameter can be the service type or an interface. While DI is built in, it'
 executed sequentially. Each middle ware performs a asynchronous logic or trasfers the next to the next pipeline. eg a middleware for authentication, 
 middle ware for fetching static files. ASP.NET Core includes a rich set of built-in middleware, and you can write custom middleware.
 
+What is host, What is its role?
+Asp.net core apps require a host within which they execute. The host is responsible for application start up and lifetime management. Host responsibility also includes server and application's availability and its configuration. 
+A host must implement "IWebHost" interface. AspNetcore provided "IWebHost" implementation is "WebHost". This "WebHost" is created using "WebHostBuilder" class (Factory pattern). With "WebHostBuilder" you create host, set the webserver(like kestrel), set the content root etc.
 
- 
+What Can you Configure using WebHostBuilder class?
+
+set the WebServer                                            -- .UseKestrel()
+set IIS as proxy to Kesterl                                  -- .UseIISIntegration()
+set the middleware/request pipeline                          -- .Configure()
+set the DI                                                   -- .ConfigureServices()
+move Configure and ConfigureServices method to Startup file  -- .UseStartup()
+set Content root path                                        -- .UseContentRoot(path)
+set Environment variables                                    -- .UseSetting(key,value)
+set the path to access static files                          -- .UseWebRoot(FolderName)
+set the url which the server will listen to                  -- .UseUrls("http://localhost:5001;https://hostname:5002")
+set the startupAssembly                                      -- .UseStartup("StartupAssemblyName")
+
+
+
+
+
 
