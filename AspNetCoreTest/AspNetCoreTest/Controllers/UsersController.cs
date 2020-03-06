@@ -35,6 +35,7 @@ namespace AspNetCoreTest.Controllers
 
         // GET: api/Users
         [HttpGet]
+        [ResponseCache(Duration =60)]
         public ActionResult Get()
         {
             return Ok(Users);

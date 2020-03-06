@@ -29,11 +29,13 @@ namespace AspNetCoreTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddResponseCaching();
+            services.AddMvc();// .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             string str = Configuration.GetSection("MyAppSettings:Setting").Value; // accessing value from appsetting.json
-
             services.Configure<MyAppSettings>(Configuration.GetSection("MyAppSettings")); //loading MyAppSettings section it a class as a service.
+
+            
 
         }
 
@@ -53,6 +55,8 @@ namespace AspNetCoreTest
             app.UseHttpsRedirection();  // middle ware to make http calls as https
             app.UseStaticFiles();       // middle ware to access static files
 
+            app.UseResponseCaching();
+            app.use
             /* middle ware to access static files with custom changes*/
             /*app.UseStaticFiles(new StaticFileOptions()
             {

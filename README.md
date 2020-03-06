@@ -94,9 +94,13 @@ Response data format, business validation?
   1) UseDeveloperExceptionPage()		-- add this middleware to capture exception with complete stack trace
   2) UseExceptionHandler("/api/Error")  -- use this middleware to a handler eg to Error Controller get method.
   3) UseStatusCodePages()				-- use this middleware to sent status code as pages for 4xx and 5xx status code with no body.
-  4) ExceptionFilers					-- Which captures exception withing the action method. Exception filters can be applied at global, at controller or at action method level.
+  4) ExceptionFilters					-- Which captures exception withing the action method. Exception filters can be applied at global, at controller or at action method level.
 
-
+#Caching in AspNetCore
+  1) UseResponseCaching() -- It is a middleware to cache the Get request at the server side. It is simple and applies to all routes where the ResponseCacheAttribute is applied.
+  2) InMemoryCaching      -- Using .net MemoryCacheLibrary.
+  3) DistributedCaching   -- Using Redis or NCache distributed caches.
+  4) Cache Tag Helper     -- To cache the content to MVC view or razon pages and can be stored both inmemory or Distributed Cache.
 
 
 
