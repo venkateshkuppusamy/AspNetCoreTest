@@ -42,12 +42,14 @@ namespace AspNetCoreTest
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); // give the and error stack trace, query paramaters, cookies and headers.
             }
             else
             {
+                //app.UseExceptionHandler("/api/Error");// redirect to api/Error GET request which send 500 error incase of unhandled exception.
                 app.UseHsts();
             }
+            app.UseStatusCodePages();   // return status code as pages for 4XX and 5XX error with no body.
             app.UseHttpsRedirection();  // middle ware to make http calls as https
             app.UseStaticFiles();       // middle ware to access static files
 
