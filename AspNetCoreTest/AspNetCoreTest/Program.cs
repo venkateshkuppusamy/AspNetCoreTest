@@ -31,6 +31,7 @@ namespace AspNetCoreTest
             */
             // CreateDefaultBuilder method provides default standard Host eg use Kesterl server, setting the content path, default port etc.
             return WebHost.CreateDefaultBuilder(args).UseWebRoot("StaticFiles")
+                
               .UseStartup<Startup>();
             
         }

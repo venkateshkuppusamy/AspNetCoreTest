@@ -69,6 +69,24 @@ set the path to access static files                          -- .UseWebRoot(Fold
 set the url which the server will listen to                  -- .UseUrls("http://localhost:5001;https://hostname:5002")
 set the startupAssembly                                      -- .UseStartup("StartupAssemblyName")
 
+Configuration in Aspnetcore.
+
+Configuration to Aspnetcore app can come from 
+1) appsettings.json 2) appsettings.{Environment}.json 3) User secrets file 4) Environment variables(launchSettings.json) 5) Command-line arguments
+
+
+1. launchSettings.json - This launchSettings.json file is for development purpose. When .net core application is run from Visual Studio or .Net Core CLI it uses launchSetting.json
+This file is not required while publishing to environment. So dont store application specific values in this file.
+	It has 2 sections "iisSettings" and "profiles"
+	a) iisSettings --> 
+	b) profiles    --> You can have multiple profiles, based on environment settings, where you app will run. Few Properties under each profile.
+	commandName           --  Which can be IISExpress, IIS or Project.
+	launchUrl             --  eg api/users. The default path on launch
+	launchBrowser         -- true or false. Where to lanunch browser.
+	applicationUrl        -- can have multile urls specified. where your app will be listening for request.
+	environmentVariables  -- It is object with different properties.
+
+2. appsettings.json -- This is same as app.config or web.config in traditional Asp.net applications. appsetting can be environment specific like appsettings.Development.json.
 
 
 

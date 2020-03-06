@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreTest.ConfigModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +30,11 @@ namespace AspNetCoreTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            string str = Configuration.GetSection("MyAppSettings:Setting").Value; // accessing value from appsetting.json
+
+            services.Configure<MyAppSettings>(Configuration.GetSection("MyAppSettings")); //loading MyAppSettings section it a class as a service.
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,4 +60,5 @@ namespace AspNetCoreTest
             app.UseMvc();               //middle ware which include mvc based routing.
         }
     }
+
 }

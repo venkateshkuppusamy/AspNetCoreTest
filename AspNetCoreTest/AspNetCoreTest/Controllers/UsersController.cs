@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreTest.ConfigModels;
 using AspNetCoreTest.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace AspNetCoreTest.Controllers
 {
@@ -13,8 +16,12 @@ namespace AspNetCoreTest.Controllers
     public class UsersController : ControllerBase
     {
         public static List<User> Users = new List<User>();
-        public UsersController()
+        public UsersController(IOptions<MyAppSettings> appsettings , IConfiguration configuration)
         {
+            var setting1 = appsettings.Value.Setting1;
+            var setting2 = appsettings.Value.Setting2;
+            var config = configuration.GetSection("MyAppSettings:Setting2").Value;
+
             if (!Users.Any())
             {
                 User u1 = new User() { ID = 1, Name = "venki", Address = "Velachery", PhoneNo = "+91" };

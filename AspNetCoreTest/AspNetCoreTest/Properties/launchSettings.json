@@ -14,16 +14,19 @@
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Testing"
       }
     },
     "AspNetCoreTest": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/users",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
+       
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Key1": "Value1",
+        "ASPNETCORE_URL": "URL1"
       }
     }
   }
