@@ -3,3 +3,5 @@ AspNetCoreTest/AspNetCoreTest/obj
 .vs/
 AspNetCoreTest/BasicAuthentication_WithFilter/bin
 AspNetCoreTest/BasicAuthentication_WithFilter/obj
+AspNetCoreTest/BasicAuthentication_WithCustomMiddleWare/bin
+AspNetCoreTest/BasicAuthentication_WithCustomMiddleWare/obj

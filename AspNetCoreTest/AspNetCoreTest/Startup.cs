@@ -55,7 +55,6 @@ namespace AspNetCoreTest
             app.UseStaticFiles();       // middle ware to access static files
 
             app.UseResponseCaching();
-            app.
             /* middle ware to access static files with custom changes*/
             /*app.UseStaticFiles(new StaticFileOptions()
             {
