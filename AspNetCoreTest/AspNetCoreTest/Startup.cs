@@ -35,8 +35,7 @@ namespace AspNetCoreTest
             string str = Configuration.GetSection("MyAppSettings:Setting").Value; // accessing value from appsetting.json
             services.Configure<MyAppSettings>(Configuration.GetSection("MyAppSettings")); //loading MyAppSettings section it a class as a service.
 
-            
-
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +55,7 @@ namespace AspNetCoreTest
             app.UseStaticFiles();       // middle ware to access static files
 
             app.UseResponseCaching();
-            app.use
+            app.
             /* middle ware to access static files with custom changes*/
             /*app.UseStaticFiles(new StaticFileOptions()
             {

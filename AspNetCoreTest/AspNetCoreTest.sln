@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTest", "AspNetCoreTest\AspNetCoreTest.csproj", "{FFEFB712-533A-49DF-8B95-7DFE45748B0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTest", "AspNetCoreTest\AspNetCoreTest.csproj", "{FFEFB712-533A-49DF-8B95-7DFE45748B0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{C854219E-4094-4CCD-9941-E404DE0FC86F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicAuthentication_WithFilter", "BasicAuthentication\BasicAuthentication_WithFilter.csproj", "{74080816-D390-4EBC-B67E-951DFA70C429}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{FFEFB712-533A-49DF-8B95-7DFE45748B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFEFB712-533A-49DF-8B95-7DFE45748B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFEFB712-533A-49DF-8B95-7DFE45748B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74080816-D390-4EBC-B67E-951DFA70C429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74080816-D390-4EBC-B67E-951DFA70C429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74080816-D390-4EBC-B67E-951DFA70C429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74080816-D390-4EBC-B67E-951DFA70C429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74080816-D390-4EBC-B67E-951DFA70C429} = {C854219E-4094-4CCD-9941-E404DE0FC86F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6BB2F4-2E21-4C58-8FFD-CF069B80281E}
